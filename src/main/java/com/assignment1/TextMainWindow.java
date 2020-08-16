@@ -71,70 +71,75 @@ public class TextMainWindow extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnNewMenu = new JMenu("File");
-		menuBar.add(mnNewMenu);
+		JMenu fileMenu = new JMenu("File");
+		menuBar.add(fileMenu);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem("New ");
-		mnNewMenu.add(mntmNewMenuItem);
+		JMenuItem newMenu = new JMenuItem("New ");
+		fileMenu.add(newMenu);
 		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Open File");
-		mnNewMenu.add(mntmNewMenuItem_1);
+		JMenuItem openFileMenu = new JMenuItem("Open File");
+		fileMenu.add(openFileMenu);
 		
 		JSeparator separator = new JSeparator();
-		mnNewMenu.add(separator);
+		fileMenu.add(separator);
 		
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Save");
-		mnNewMenu.add(mntmNewMenuItem_2);
+		JMenuItem saveMenu = new JMenuItem("Save");
+		saveMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Save.saveMethod(null);
+			}
+		});
+		fileMenu.add(saveMenu);
 		
 		JSeparator separator_1 = new JSeparator();
-		mnNewMenu.add(separator_1);
+		fileMenu.add(separator_1);
 		
-		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Print");
-		mnNewMenu.add(mntmNewMenuItem_3);
+		JMenuItem printMenu = new JMenuItem("Print");
+		fileMenu.add(printMenu);
 		
 		JSeparator separator_2 = new JSeparator();
-		mnNewMenu.add(separator_2);
+		fileMenu.add(separator_2);
 		
-		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Exit");
-		mntmNewMenuItem_4.addActionListener(new ActionListener() {
+		JMenuItem exitMenu = new JMenuItem("Exit");
+		exitMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(JFrame.EXIT_ON_CLOSE);
 			}
 		});
-		mnNewMenu.add(mntmNewMenuItem_4);
+		fileMenu.add(exitMenu);
 		
-		JMenuItem mntmNewMenuItem_5 = new JMenu("Search");
-		menuBar.add(mntmNewMenuItem_5);
+		JMenuItem searchMenu = new JMenu("Search");
+		menuBar.add(searchMenu);
 		
-		JMenu mnNewMenu_3 = new JMenu("View");
-		menuBar.add(mnNewMenu_3);
+		JMenu viewMenu = new JMenu("View");
+		menuBar.add(viewMenu);
 		
-		JMenu mnNewMenu_1 = new JMenu("Edit");
-		menuBar.add(mnNewMenu_1);
+		JMenu editMenu = new JMenu("Edit");
+		menuBar.add(editMenu);
 		
 		JSeparator separator_3 = new JSeparator();
-		mnNewMenu_1.add(separator_3);
+		editMenu.add(separator_3);
 		
-		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Cut");
-		mnNewMenu_1.add(mntmNewMenuItem_6);
+		JMenuItem cutMenu = new JMenuItem("Cut");
+		editMenu.add(cutMenu);
 		
-		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Copy");
-		mnNewMenu_1.add(mntmNewMenuItem_7);
+		JMenuItem copyMenu = new JMenuItem("Copy");
+		editMenu.add(copyMenu);
 		
-		JMenuItem mntmNewMenuItem_8 = new JMenuItem("Paste");
-		mnNewMenu_1.add(mntmNewMenuItem_8);
+		JMenuItem pasteMenu = new JMenuItem("Paste");
+		editMenu.add(pasteMenu);
 		
 		JSeparator separator_4 = new JSeparator();
-		mnNewMenu_1.add(separator_4);
+		editMenu.add(separator_4);
 		
-		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Time/Date");
-		mnNewMenu_1.add(mntmNewMenuItem_9);
+		JMenuItem timeDateMenu = new JMenuItem("Time/Date");
+		editMenu.add(timeDateMenu);
 		
-		JMenu mnNewMenu_2 = new JMenu("Help");
-		menuBar.add(mnNewMenu_2);
+		JMenu helpMenu = new JMenu("Help");
+		menuBar.add(helpMenu);
 		
-		JMenuItem mntmNewMenuItem_10 = new JMenuItem("About Text Pad");
-		mnNewMenu_2.add(mntmNewMenuItem_10);
+		JMenuItem about = new JMenuItem("About Text Pad");
+		helpMenu.add(about);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
