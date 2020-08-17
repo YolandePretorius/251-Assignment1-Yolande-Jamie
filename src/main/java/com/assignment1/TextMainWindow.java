@@ -1,6 +1,7 @@
 package com.assignment1;
 
 import java.awt.EventQueue;
+import java.awt.FileDialog;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -31,12 +32,21 @@ import javax.swing.JSpinner;
 import javax.swing.JSeparator;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 import javax.swing.JEditorPane;
 import java.awt.TextField;
 import javax.swing.JTextArea;
 import java.awt.TextArea;
+import java.awt.Cursor;
+import javax.swing.JTextPane;
 
 public class TextMainWindow extends JFrame {
+	
+	String filename;
 
 	private JPanel contentPane;
 	/**
@@ -44,6 +54,8 @@ public class TextMainWindow extends JFrame {
 	 */
 	private final JEditorPane editorPane = new JEditorPane();
 
+	public TextArea textArea; 
+	
 	/**
 	 * Launch the application.
 	 */
@@ -64,9 +76,9 @@ public class TextMainWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public TextMainWindow() {
-		setTitle("Text Pad");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(200, 200, 850, 700);
+		setTitle("Textpad");
 		
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -74,10 +86,51 @@ public class TextMainWindow extends JFrame {
 		JMenu fileMenu = new JMenu("File");
 		menuBar.add(fileMenu);
 		
-		JMenuItem newMenu = new JMenuItem("New ");
+		JMenuItem newMenu = new JMenuItem("New");
+		newMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				textArea.setText(" ");
+				setTitle(filename);
+			}
+		});
+		
+		
+		
 		fileMenu.add(newMenu);
 		
 		JMenuItem openFileMenu = new JMenuItem("Open File");
+		openFileMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FileDialog fileDialog = new FileDialog(TextMainWindow.this, "Open File ",FileDialog.LOAD);
+				fileDialog.setVisible(true);
+				
+				if (fileDialog.getFile() != null) {
+					filename = fileDialog.getDirectory() + fileDialog.getFile();
+					setTitle(filename);
+				}
+				
+				try {
+					BufferedReader reader = new BufferedReader(new FileReader(filename));
+					StringBuilder stringBuild = new StringBuilder();
+					
+					String line = null;
+					
+					while ((line = reader.readLine()) != null) {
+						stringBuild.append(line = "\n");
+						textArea.setText(stringBuild.toString());
+					}
+					reader.close();
+					//textArea.setText(stringBuild.toString());
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					System.out.println("File not found");
+					e1.printStackTrace();
+				}
+			}
+		});
 		fileMenu.add(openFileMenu);
 		
 		JSeparator separator = new JSeparator();
@@ -90,6 +143,14 @@ public class TextMainWindow extends JFrame {
 			}
 		});
 		fileMenu.add(saveMenu);
+		
+		JMenuItem Save_as = new JMenuItem("Save As");
+		Save_as.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//saveAs();
+			}
+		});
+		fileMenu.add(Save_as);
 		
 		JSeparator separator_1 = new JSeparator();
 		fileMenu.add(separator_1);
@@ -145,7 +206,13 @@ public class TextMainWindow extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		TextArea textArea = new TextArea();
+		//TextArea 
+		textArea = new TextArea();
+		textArea.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		contentPane.add(textArea);
+		
+		
 	}
+
+
 }
