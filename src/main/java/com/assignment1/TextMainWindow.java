@@ -102,35 +102,24 @@ public class TextMainWindow extends JFrame {
 		JMenuItem openFileMenu = new JMenuItem("Open File");
 		openFileMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String lineCompound = "";
+								
 				FileDialog fileDialog = new FileDialog(TextMainWindow.this, "Open File ",FileDialog.LOAD);
 				fileDialog.setVisible(true);
 				
+				// set file name at the top of the window
 				if (fileDialog.getFile() != null) {
 					filename = fileDialog.getDirectory() + fileDialog.getFile();
 					setTitle(filename);
 				}
 				
-				try {
-					BufferedReader reader = new BufferedReader(new FileReader(filename));
-					StringBuilder stringBuild = new StringBuilder();
+				lineCompound= OpenFileClass.openFunction(filename);
+				textArea.setText(lineCompound.toString()); // Set text read from file on textArea 
 					
-					String line = null;
-					
-					while ((line = reader.readLine()) != null) {
-						stringBuild.append(line = "\n");
-						textArea.setText(stringBuild.toString());
-					}
-					reader.close();
-					//textArea.setText(stringBuild.toString());
-				} catch (FileNotFoundException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (IOException e1) {
-					System.out.println("File not found");
-					e1.printStackTrace();
 				}
-			}
-		});
+			});
+	
+		
 		fileMenu.add(openFileMenu);
 		
 		JSeparator separator = new JSeparator();
@@ -142,15 +131,17 @@ public class TextMainWindow extends JFrame {
 				Save.saveMethod(null);
 			}
 		});
+		
+		
 		fileMenu.add(saveMenu);
 		
-		JMenuItem Save_as = new JMenuItem("Save As");
-		Save_as.addActionListener(new ActionListener() {
+		JMenuItem SaveAs = new JMenuItem("Save As");
+		SaveAs .addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//saveAs();
 			}
 		});
-		fileMenu.add(Save_as);
+		fileMenu.add(SaveAs);
 		
 		JSeparator separator_1 = new JSeparator();
 		fileMenu.add(separator_1);
