@@ -1,5 +1,7 @@
 package com.assignment1;
 
+import java.awt.FileDialog;
+import java.awt.TextArea;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -10,7 +12,17 @@ import java.io.IOException;
 public class OpenFileClass{  // class used to open a file from file system
 	
 	
-	static String openFunction(String filename){
+	public static String openFunction(String filename, TextArea textArea, TextMainWindow textMainWindow){
+		
+		String lineCompound = "";
+		
+		FileDialog fileDialog = new FileDialog(textMainWindow, "Open File ",FileDialog.LOAD);
+		fileDialog.setVisible(true);
+		
+		// set file name at the top of the window
+		if (fileDialog.getFile() != null) {
+			filename = fileDialog.getDirectory() + fileDialog.getFile();
+			}
 			
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(filename));
@@ -23,9 +35,9 @@ public class OpenFileClass{  // class used to open a file from file system
 				lineCompoundFile = lineCompoundFile +  line; // read lines from file into lineCompound
 			}
 			
-			
 			reader.close();
-			return(lineCompoundFile);
+			textArea.setText(lineCompoundFile.toString()); // Set text read from file on textArea 
+		
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -37,6 +49,7 @@ public class OpenFileClass{  // class used to open a file from file system
 		return filename;
 	
 	}
+
 	
 
 }

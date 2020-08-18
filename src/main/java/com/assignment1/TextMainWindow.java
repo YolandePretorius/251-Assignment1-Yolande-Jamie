@@ -92,29 +92,19 @@ public class TextMainWindow extends JFrame {
 				
 				textArea.setText(" ");
 				setTitle(filename);
+				
 			}
 		});
 		
 		
 		
-		fileMenu.add(newMenu);
-		
+		fileMenu.add(newMenu);	
 		JMenuItem openFileMenu = new JMenuItem("Open File");
 		openFileMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String lineCompound = "";
-								
-				FileDialog fileDialog = new FileDialog(TextMainWindow.this, "Open File ",FileDialog.LOAD);
-				fileDialog.setVisible(true);
 				
-				// set file name at the top of the window
-				if (fileDialog.getFile() != null) {
-					filename = fileDialog.getDirectory() + fileDialog.getFile();
-					setTitle(filename);
-				}
-				
-				lineCompound= OpenFileClass.openFunction(filename);
-				textArea.setText(lineCompound.toString()); // Set text read from file on textArea 
+				filename = OpenFileClass.openFunction(filename,textArea,TextMainWindow.this); //class that is called to open a file 
+				setTitle(filename);
 					
 				}
 			});
@@ -128,7 +118,10 @@ public class TextMainWindow extends JFrame {
 		JMenuItem saveMenu = new JMenuItem("Save");
 		saveMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Save.saveMethod(null);
+				
+				//filename = Save.saveMethod(filename,textArea);
+				setTitle(filename);
+				
 			}
 		});
 		
@@ -138,7 +131,9 @@ public class TextMainWindow extends JFrame {
 		JMenuItem SaveAs = new JMenuItem("Save As");
 		SaveAs .addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//saveAs();
+				
+				filename = SaveAsClass.SaveAsFunction(filename,textArea,TextMainWindow.this); //class called to save a file 
+				setTitle(filename);
 			}
 		});
 		fileMenu.add(SaveAs);
