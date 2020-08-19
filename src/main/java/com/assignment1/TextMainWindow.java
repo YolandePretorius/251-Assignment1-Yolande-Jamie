@@ -111,7 +111,7 @@ public class TextMainWindow extends JFrame implements Printable {
 		openFileMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				filename = OpenFileClass.openFunction(filename,textArea,TextMainWindow.this); //class that is called to open a file 
+				filename = OpenFileClass.openFunction(filename,textArea,TextMainWindow.this); //Class: Open a file 
 				setTitle(filename);
 					
 				}
@@ -140,32 +140,34 @@ public class TextMainWindow extends JFrame implements Printable {
 		SaveAs .addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				filename = SaveAsClass.SaveAsFunction(filename,textArea,TextMainWindow.this); //class called to save a file 
+				filename = SaveAsClass.SaveAsFunction(filename,textArea,TextMainWindow.this); //Class: save a file 
 				setTitle(filename);
 			}
 		});
 		fileMenu.add(SaveAs);
 		
+		
 		JSeparator separator_1 = new JSeparator();
 		fileMenu.add(separator_1);
+		
 		
 		JMenuItem printMenu = new JMenuItem("Print");
 		printMenu.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				PrintUtilities.printComponent(textArea);
+				PrintUtilities.printComponent(textArea);     // Print class 
 	
 			}
 		});
-	
-		
 	
 		fileMenu.add(printMenu);
 		
 		JSeparator separator_2 = new JSeparator();
 		fileMenu.add(separator_2);
 		
-		JMenuItem exitMenu = new JMenuItem("Exit");
+		
+		
+		JMenuItem exitMenu = new JMenuItem("Exit");           // Exit text editor
 		exitMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(JFrame.EXIT_ON_CLOSE);
@@ -173,6 +175,7 @@ public class TextMainWindow extends JFrame implements Printable {
 		});
 		
 		fileMenu.add(exitMenu);
+		
 		
 		JMenuItem searchMenu = new JMenu("Search");
 		menuBar.add(searchMenu);
@@ -211,8 +214,7 @@ public class TextMainWindow extends JFrame implements Printable {
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		//TextArea 
-		//textArea = new TextArea();
+		// Add text area to window frame
 		textArea.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		contentPane.add(textArea);
 		
@@ -224,6 +226,6 @@ public class TextMainWindow extends JFrame implements Printable {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
+
 
 }
