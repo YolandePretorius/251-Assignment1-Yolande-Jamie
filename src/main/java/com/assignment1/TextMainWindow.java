@@ -27,11 +27,18 @@ import javax.swing.JMenuBar;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JMenu;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import javax.swing.JSeparator;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -43,8 +50,9 @@ import javax.swing.JTextArea;
 import java.awt.TextArea;
 import java.awt.Cursor;
 import javax.swing.JTextPane;
+import javax.swing.RepaintManager;
 
-public class TextMainWindow extends JFrame {
+public class TextMainWindow extends JFrame implements Printable {
 	
 	String filename;
 
@@ -53,8 +61,8 @@ public class TextMainWindow extends JFrame {
 	 * @wbp.nonvisual location=185,-16
 	 */
 	private final JEditorPane editorPane = new JEditorPane();
-
-	public TextArea textArea; 
+	private final JTextArea textArea = new JTextArea();
+	//public TextArea textArea; 
 	
 	/**
 	 * Launch the application.
@@ -89,7 +97,7 @@ public class TextMainWindow extends JFrame {
 		JMenuItem newMenu = new JMenuItem("New");
 		newMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				filename = null;
 				textArea.setText(" ");
 				setTitle(filename);
 				
@@ -119,7 +127,7 @@ public class TextMainWindow extends JFrame {
 		saveMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				//filename = Save.saveMethod(filename,textArea);
+				filename = SaveClass.saveMethod(filename,textArea, TextMainWindow.this);
 				setTitle(filename);
 				
 			}
@@ -142,6 +150,16 @@ public class TextMainWindow extends JFrame {
 		fileMenu.add(separator_1);
 		
 		JMenuItem printMenu = new JMenuItem("Print");
+		printMenu.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				PrintUtilities.printComponent(textArea);
+	
+			}
+		});
+	
+		
+	
 		fileMenu.add(printMenu);
 		
 		JSeparator separator_2 = new JSeparator();
@@ -153,6 +171,7 @@ public class TextMainWindow extends JFrame {
 				System.exit(JFrame.EXIT_ON_CLOSE);
 			}
 		});
+		
 		fileMenu.add(exitMenu);
 		
 		JMenuItem searchMenu = new JMenu("Search");
@@ -193,12 +212,18 @@ public class TextMainWindow extends JFrame {
 		contentPane.setLayout(new GridLayout(1, 0, 0, 0));
 		
 		//TextArea 
-		textArea = new TextArea();
+		//textArea = new TextArea();
 		textArea.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 		contentPane.add(textArea);
 		
 		
+	
 	}
 
+	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
 
 }
