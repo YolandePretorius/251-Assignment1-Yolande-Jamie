@@ -33,8 +33,15 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JEditorPane;
 import java.awt.TextField;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+
 import javax.swing.JTextArea;
 import java.awt.TextArea;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.ButtonGroup;
+
 
 public class TextMainWindow extends JFrame {
 
@@ -43,6 +50,8 @@ public class TextMainWindow extends JFrame {
 	 * @wbp.nonvisual location=185,-16
 	 */
 	private final JEditorPane editorPane = new JEditorPane();
+	private final Action action = new SwingAction();
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -117,6 +126,13 @@ public class TextMainWindow extends JFrame {
 		
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Cut");
 		mnNewMenu_1.add(mntmNewMenuItem_6);
+		mntmNewMenuItem_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				editorPane.cut();
+//				String s = EditMenu.CutString(editorPane.getSelectedText());
+//				editorPane.replaceSelection(s);
+			}
+		});
 		
 		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Copy");
 		mnNewMenu_1.add(mntmNewMenuItem_7);
@@ -142,5 +158,13 @@ public class TextMainWindow extends JFrame {
 		
 		TextArea textArea = new TextArea();
 		contentPane.add(textArea);
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}  
 	}
 }
