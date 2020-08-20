@@ -10,6 +10,7 @@ import javax.swing.JTextArea;
 
 public class SaveClass {
 
+
 	public static String saveMethod(String filename, JTextArea textArea, TextMainWindow window) {
 		
 		
@@ -28,10 +29,12 @@ public class SaveClass {
 				System.out.println("File not found");
 				e.printStackTrace();
 				}
+
 			}else {
 
 				filename = SaveAsClass.SaveAsFunction(filename, textArea, window);
 				}
 		return filename;
 		}
+
 }

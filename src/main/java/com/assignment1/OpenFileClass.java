@@ -15,11 +15,12 @@ import javax.swing.JTextArea;
 public class OpenFileClass{  // class used to open a file from file system
 	
 	
-	public static String openFunction(String filename,JTextArea textArea, TextMainWindow window){
+public static String openFunction(String filename,JTextArea textArea, TextMainWindow window){
 		
 		String lineCompound = "";
 		
 		FileDialog fileDialog = new FileDialog(window, "Open File ",FileDialog.LOAD);
+
 		fileDialog.setVisible(true);
 		
 		// set file name at the top of the window
@@ -53,10 +54,7 @@ public class OpenFileClass{  // class used to open a file from file system
 	
 	}
 
-	
 
-	
 
-	
 
 }
