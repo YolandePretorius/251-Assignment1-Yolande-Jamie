@@ -198,8 +198,9 @@ public class TextMainWindow extends JFrame implements Printable {
 		editMenu.add(cutMenu);
 		cutMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String s = EditMenu.CutString(textArea.getSelectedText());
-				textArea.replaceSelection(s);
+//				String s = EditMenu.CutString(textArea.getSelectedText());
+//				textArea.replaceSelection(s);
+				textArea.copy();
 			}
 		});
 
@@ -207,19 +208,29 @@ public class TextMainWindow extends JFrame implements Printable {
 		editMenu.add(copyMenu);
 		copyMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				EditMenu.CopyString(textArea.getSelectedText());
+//				EditMenu.CopyString(textArea.getSelectedText());
+				textArea.cut();
 			}
 		});
 
-		
 		JMenuItem pasteMenu = new JMenuItem("Paste");
 		editMenu.add(pasteMenu);
+		pasteMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.paste();
+			}
+		});
 		
 		JSeparator separator_4 = new JSeparator();
 		editMenu.add(separator_4);
 		
 		JMenuItem timeDateMenu = new JMenuItem("Time/Date");
 		editMenu.add(timeDateMenu);
+		timeDateMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textArea.insert(EditMenu.TimeAndDate(), 0);
+			}
+		});
 		
 		JMenu helpMenu = new JMenu("Help");
 		menuBar.add(helpMenu);
