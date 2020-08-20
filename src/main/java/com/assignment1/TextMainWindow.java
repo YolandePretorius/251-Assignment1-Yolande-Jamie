@@ -198,9 +198,8 @@ public class TextMainWindow extends JFrame implements Printable {
 		editMenu.add(mntmNewMenuItem_6);
 		mntmNewMenuItem_6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				editorPane.cut();
-//				String s = EditMenu.CutString(editorPane.getSelectedText());
-//				editorPane.replaceSelection(s);
+				String s = EditMenu.CutString(textArea.getSelectedText());
+				textArea.replaceSelection(s);
 			}
 		});
 
@@ -220,6 +219,7 @@ public class TextMainWindow extends JFrame implements Printable {
 		menuBar.add(helpMenu);
 		
 		JMenuItem about = new JMenuItem("About Text Pad");
+		
 		helpMenu.add(about);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
