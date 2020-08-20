@@ -1,6 +1,7 @@
 package com.assignment1;
 
 import java.awt.EventQueue;
+import java.awt.FileDialog;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -24,13 +25,26 @@ import javax.swing.JMenuItem;
 import java.awt.Color;
 import javax.swing.JMenuBar;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JScrollBar;
 import javax.swing.JMenu;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+
 import javax.swing.JComboBox;
 import javax.swing.JSpinner;
 import javax.swing.JSeparator;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 import javax.swing.JEditorPane;
 import java.awt.TextField;
 import java.awt.datatransfer.Clipboard;
@@ -38,19 +52,32 @@ import java.awt.datatransfer.StringSelection;
 
 import javax.swing.JTextArea;
 import java.awt.TextArea;
+
 import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.ButtonGroup;
 
+import java.awt.Cursor;
+import javax.swing.JTextPane;
+import javax.swing.RepaintManager;
+import javax.swing.JTextField;
+import javax.swing.DropMode;
 
-public class TextMainWindow extends JFrame {
+public class TextMainWindow extends JFrame  {
+	
+	JMenuBar menuBar;
+	//JFrame window;
+	//JTextArea textArea;
+	JScrollPane scrollPane;
+	String filename;
 
 	private JPanel contentPane;
-	/**
-	 * @wbp.nonvisual location=185,-16
-	 */
-	private final JEditorPane editorPane = new JEditorPane();
-
+	 JTextArea textArea = new JTextArea();
+	
+	private JTextField textField;
+	//public TextArea textArea; 
+	protected TextMainWindow window;
+	
 	/**
 	 * Launch the application.
 	 */
@@ -58,8 +85,8 @@ public class TextMainWindow extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TextMainWindow frame = new TextMainWindow();
-					frame.setVisible(true);
+					TextMainWindow window = new TextMainWindow();
+					window.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -70,53 +97,115 @@ public class TextMainWindow extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TextMainWindow() {
-		setTitle("Text Pad");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+	public TextMainWindow() {							//Constructor
 		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(200, 200, 850, 700);
+		setTitle("Textpad");
+				
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu mnNewMenu = new JMenu("File");
-		menuBar.add(mnNewMenu);
+		JMenu fileMenu = new JMenu("File");
+		menuBar.add(fileMenu);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem("New ");
-		mnNewMenu.add(mntmNewMenuItem);
+		JMenuItem newMenu = new JMenuItem("New");
+		newMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				filename = null;
+				textArea.setText(" ");
+				setTitle(filename);
+				
+			}
+		});
 		
-		JMenuItem mntmNewMenuItem_1 = new JMenuItem("Open File");
-		mnNewMenu.add(mntmNewMenuItem_1);
+		
+		
+		fileMenu.add(newMenu);	
+		JMenuItem openFileMenu = new JMenuItem("Open File");
+		openFileMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				filename = OpenFileClass.openFunction(filename,textArea,window); //Class: Open a file 
+				setTitle(filename);
+					
+				}
+			});
+	
+		
+		fileMenu.add(openFileMenu);
 		
 		JSeparator separator = new JSeparator();
-		mnNewMenu.add(separator);
+		fileMenu.add(separator);
 		
-		JMenuItem mntmNewMenuItem_2 = new JMenuItem("Save");
-		mnNewMenu.add(mntmNewMenuItem_2);
+		//Save Class
+		
+		JMenuItem saveMenu = new JMenuItem("Save");
+		saveMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				filename = SaveClass.saveMethod(filename,textArea, window);
+				setTitle(filename);
+				
+			}
+		});
+		
+		
+		fileMenu.add(saveMenu);
+		
+		//Save As class
+		
+		JMenuItem SaveAs = new JMenuItem("Save As");
+		SaveAs .addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				filename = SaveAsClass.SaveAsFunction(filename,textArea,window); //Class: save a file 
+				setTitle(filename);
+			}
+		});
+		fileMenu.add(SaveAs);
+		
 		
 		JSeparator separator_1 = new JSeparator();
-		mnNewMenu.add(separator_1);
+		fileMenu.add(separator_1);
 		
-		JMenuItem mntmNewMenuItem_3 = new JMenuItem("Print");
-		mnNewMenu.add(mntmNewMenuItem_3);
+		
+		 // Print class
+		
+		JMenuItem printMenu = new JMenuItem("Print");
+		printMenu.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				PrintClass.printComponent(textArea);
+			    
+	
+			}
+		});
+	
+		fileMenu.add(printMenu);
 		
 		JSeparator separator_2 = new JSeparator();
-		mnNewMenu.add(separator_2);
+		fileMenu.add(separator_2);
 		
-		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Exit");
-		mntmNewMenuItem_4.addActionListener(new ActionListener() {
+		
+		// Exit text editor
+		
+		JMenuItem exitMenu = new JMenuItem("Exit");           
+		exitMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(JFrame.EXIT_ON_CLOSE);
 			}
 		});
-		mnNewMenu.add(mntmNewMenuItem_4);
 		
-		JMenuItem mntmNewMenuItem_5 = new JMenu("Search");
-		menuBar.add(mntmNewMenuItem_5);
+		fileMenu.add(exitMenu);
 		
-		JMenu mnNewMenu_3 = new JMenu("View");
-		menuBar.add(mnNewMenu_3);
 		
-		JMenu editMenu = new JMenu("Edit");
+		//view Class
+		JMenu viewMenu = new JMenu("View");
+		menuBar.add(viewMenu);
+		
+		JMenu editMenu = new JMenu("Edit");  //create Edit menu
+
 		menuBar.add(editMenu);
 		
 		JSeparator separator_3 = new JSeparator();
@@ -137,10 +226,13 @@ public class TextMainWindow extends JFrame {
 		
 		JMenuItem pasteMenuItem = new JMenuItem("Paste");
 		editMenu.add(pasteMenuItem);
+
+
 		
 		JSeparator separator_4 = new JSeparator();
 		editMenu.add(separator_4);
 		
+
 		JMenuItem timeDateMenuItem = new JMenuItem("Time/Date");
 		editMenu.add(timeDateMenuItem);
 		
@@ -155,14 +247,43 @@ public class TextMainWindow extends JFrame {
 		});
 		
 		helpMenu.add(aboutMenuItem);
+
+			
+				final JButton SearchButton = new JButton("Search");
+		SearchButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			  
+			    if (textField.getText().equals("")) {
+			    	SearchClass.removeHighlighter(textArea);
+			    }else {
+			    	SearchClass.searchTextArea(textArea, textField.getText());
+			    }
+			}
+		});
+		menuBar.add(SearchButton);
+		
+		// search text field used to add text searching for
+		textField = new JTextField();
+		menuBar.add(textField);
+		textField.setColumns(1);
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		TextArea textArea = new TextArea();
-		contentPane.add(textArea);
+		
+		
+		// text area functions: scroll and set cursor
+		JScrollPane scrollPane_1 = new JScrollPane();
+		contentPane.add(scrollPane_1);
+		scrollPane_1.setViewportView(textArea);
+		textArea.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+		
+		
+	
 	}
+
 	private class SwingAction extends AbstractAction {
 		public SwingAction() {
 			putValue(NAME, "SwingAction");
@@ -171,4 +292,7 @@ public class TextMainWindow extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 		}  
 	}
+
+
+
 }
