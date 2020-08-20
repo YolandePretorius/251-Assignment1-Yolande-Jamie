@@ -153,6 +153,7 @@ public class TextMainWindow extends JFrame {
 				HelpMenu.aboutPopUp();
 			}
 		});
+		
 		helpMenu.add(aboutMenuItem);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
