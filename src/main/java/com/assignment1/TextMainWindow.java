@@ -47,8 +47,16 @@ import java.io.IOException;
 
 import javax.swing.JEditorPane;
 import java.awt.TextField;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+
 import javax.swing.JTextArea;
 import java.awt.TextArea;
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.ButtonGroup;
+
 import java.awt.Cursor;
 import javax.swing.JTextPane;
 import javax.swing.RepaintManager;
@@ -196,43 +204,52 @@ public class TextMainWindow extends JFrame  {
 		JMenu viewMenu = new JMenu("View");
 		menuBar.add(viewMenu);
 		
-		
-		
 		JMenu editMenu = new JMenu("Edit");  //create Edit menu
+
 		menuBar.add(editMenu);
 		
 		JSeparator separator_3 = new JSeparator();
 		editMenu.add(separator_3);
 		
-		//Cutt Class 
-		JMenuItem cutMenu = new JMenuItem("Cut");
-		editMenu.add(cutMenu);
+		JMenuItem cutMenuItem = new JMenuItem("Cut");
+		editMenu.add(cutMenuItem);
+		cutMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				editorPane.cut();
+//				String s = EditMenu.CutString(editorPane.getSelectedText());
+//				editorPane.replaceSelection(s);
+			}
+		});
 		
-		//Copy Class
-		JMenuItem copyMenu = new JMenuItem("Copy");
-		editMenu.add(copyMenu);
+		JMenuItem copyMenuItem = new JMenuItem("Copy");
+		editMenu.add(copyMenuItem);
 		
-		//Paste Class
-		JMenuItem pasteMenu = new JMenuItem("Paste");
-		editMenu.add(pasteMenu);
-		
+		JMenuItem pasteMenuItem = new JMenuItem("Paste");
+		editMenu.add(pasteMenuItem);
+
+
 		
 		JSeparator separator_4 = new JSeparator();
 		editMenu.add(separator_4);
 		
-		//Time/Date class
-		JMenuItem timeDateMenu = new JMenuItem("Time/Date");
-		editMenu.add(timeDateMenu);
+
+		JMenuItem timeDateMenuItem = new JMenuItem("Time/Date");
+		editMenu.add(timeDateMenuItem);
 		
-		
-		JMenu helpMenu = new JMenu("Help"); // Create Help Menu
+		JMenu helpMenu = new JMenu("Help");
 		menuBar.add(helpMenu);
 		
-		//About Class
-		JMenuItem about = new JMenuItem("About Text Pad");
-		helpMenu.add(about);
+		JMenuItem aboutMenuItem = new JMenuItem("About Text Pad");
+		aboutMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				HelpMenu.aboutPopUp();
+			}
+		});
 		
-		final JButton SearchButton = new JButton("Search");
+		helpMenu.add(aboutMenuItem);
+
+			
+				final JButton SearchButton = new JButton("Search");
 		SearchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			  
@@ -249,6 +266,7 @@ public class TextMainWindow extends JFrame  {
 		textField = new JTextField();
 		menuBar.add(textField);
 		textField.setColumns(1);
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -265,6 +283,16 @@ public class TextMainWindow extends JFrame  {
 		
 	
 	}
+
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}  
+	}
+
 
 
 }
