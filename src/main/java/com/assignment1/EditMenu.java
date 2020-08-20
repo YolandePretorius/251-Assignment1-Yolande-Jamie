@@ -20,6 +20,12 @@ public class EditMenu {
         clip.setContents(cutClip, cutClip);
 		return "";
 	}
+	
+	static void CopyString(String string) {
+        StringSelection cutClip = new StringSelection(string);
+        clip = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clip.setContents(cutClip, cutClip);
+	}
 
 
 	

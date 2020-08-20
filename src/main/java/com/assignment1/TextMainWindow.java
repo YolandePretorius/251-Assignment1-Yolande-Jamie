@@ -194,9 +194,9 @@ public class TextMainWindow extends JFrame implements Printable {
 		editMenu.add(separator_3);
 		
 
-		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Cut");
-		editMenu.add(mntmNewMenuItem_6);
-		mntmNewMenuItem_6.addActionListener(new ActionListener() {
+		JMenuItem cutMenu = new JMenuItem("Cut");
+		editMenu.add(cutMenu);
+		cutMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String s = EditMenu.CutString(textArea.getSelectedText());
 				textArea.replaceSelection(s);
@@ -205,6 +205,12 @@ public class TextMainWindow extends JFrame implements Printable {
 
 		JMenuItem copyMenu = new JMenuItem("Copy");
 		editMenu.add(copyMenu);
+		copyMenu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EditMenu.CopyString(textArea.getSelectedText());
+			}
+		});
+
 		
 		JMenuItem pasteMenu = new JMenuItem("Paste");
 		editMenu.add(pasteMenu);
