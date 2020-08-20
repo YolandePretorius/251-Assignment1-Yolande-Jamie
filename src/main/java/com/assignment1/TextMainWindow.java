@@ -50,8 +50,6 @@ public class TextMainWindow extends JFrame {
 	 * @wbp.nonvisual location=185,-16
 	 */
 	private final JEditorPane editorPane = new JEditorPane();
-	private final Action action = new SwingAction();
-	private final ButtonGroup buttonGroup = new ButtonGroup();
 
 	/**
 	 * Launch the application.
@@ -118,15 +116,15 @@ public class TextMainWindow extends JFrame {
 		JMenu mnNewMenu_3 = new JMenu("View");
 		menuBar.add(mnNewMenu_3);
 		
-		JMenu mnNewMenu_1 = new JMenu("Edit");
-		menuBar.add(mnNewMenu_1);
+		JMenu editMenu = new JMenu("Edit");
+		menuBar.add(editMenu);
 		
 		JSeparator separator_3 = new JSeparator();
-		mnNewMenu_1.add(separator_3);
+		editMenu.add(separator_3);
 		
-		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Cut");
-		mnNewMenu_1.add(mntmNewMenuItem_6);
-		mntmNewMenuItem_6.addActionListener(new ActionListener() {
+		JMenuItem cutMenuItem = new JMenuItem("Cut");
+		editMenu.add(cutMenuItem);
+		cutMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				editorPane.cut();
 //				String s = EditMenu.CutString(editorPane.getSelectedText());
@@ -134,23 +132,28 @@ public class TextMainWindow extends JFrame {
 			}
 		});
 		
-		JMenuItem mntmNewMenuItem_7 = new JMenuItem("Copy");
-		mnNewMenu_1.add(mntmNewMenuItem_7);
+		JMenuItem copyMenuItem = new JMenuItem("Copy");
+		editMenu.add(copyMenuItem);
 		
-		JMenuItem mntmNewMenuItem_8 = new JMenuItem("Paste");
-		mnNewMenu_1.add(mntmNewMenuItem_8);
+		JMenuItem pasteMenuItem = new JMenuItem("Paste");
+		editMenu.add(pasteMenuItem);
 		
 		JSeparator separator_4 = new JSeparator();
-		mnNewMenu_1.add(separator_4);
+		editMenu.add(separator_4);
 		
-		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Time/Date");
-		mnNewMenu_1.add(mntmNewMenuItem_9);
+		JMenuItem timeDateMenuItem = new JMenuItem("Time/Date");
+		editMenu.add(timeDateMenuItem);
 		
-		JMenu mnNewMenu_2 = new JMenu("Help");
-		menuBar.add(mnNewMenu_2);
+		JMenu helpMenu = new JMenu("Help");
+		menuBar.add(helpMenu);
 		
-		JMenuItem mntmNewMenuItem_10 = new JMenuItem("About Text Pad");
-		mnNewMenu_2.add(mntmNewMenuItem_10);
+		JMenuItem aboutMenuItem = new JMenuItem("About Text Pad");
+		aboutMenuItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				HelpMenu.aboutPopUp();
+			}
+		});
+		helpMenu.add(aboutMenuItem);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
