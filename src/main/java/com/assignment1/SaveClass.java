@@ -10,21 +10,17 @@ import javax.swing.JTextArea;
 
 public class SaveClass {
 
-	public static String saveMethod(String filename, JTextArea textArea, TextMainWindow textMainWindow) {
+	public static String saveMethod(String filename, JTextArea textArea, TextMainWindow window) {
 		
 		
-		if (filename == null) {
-			filename = SaveAsClass.SaveAsFunction(filename, textArea, textMainWindow);
-		}
-		
-		else {
-		
-		FileDialog fileDialog = new FileDialog(textMainWindow, "Save File ", FileDialog.SAVE);	//Open window to safe file
+		if (filename != null) {
+			//filename = SaveAsClass.SaveAsFunction(filename, textArea, textMainWindow);
+	  /*
+		ileDialog fileDialog = new FileDialog(textMainWindow, "Save File ", FileDialog.SAVE);	//Open window to safe file
 		fileDialog.setVisible(false);
 		filename = fileDialog.getDirectory() + fileDialog.getFile();
-		
-		if (filename != null){
-			try {
+		*/
+		try {
 				FileWriter fileWriter = new FileWriter(filename); // create new file
 				fileWriter.write(textArea.getText());
 				fileWriter.close();
@@ -32,12 +28,10 @@ public class SaveClass {
 				System.out.println("File not found");
 				e.printStackTrace();
 				}
-			}
-		}
-		return filename;
-	}
+			}else {
 
-	
-			
-	
+				filename = SaveAsClass.SaveAsFunction(filename, textArea, window);
+				}
+		return filename;
+		}
 }

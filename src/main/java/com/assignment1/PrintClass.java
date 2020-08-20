@@ -4,14 +4,14 @@ import java.awt.*;
 import javax.swing.*;
 import java.awt.print.*;
 
-public class PrintUtilities implements Printable {
+public class PrintClass implements Printable {
   private Component componentToBePrinted;
 
   public static void printComponent(Component c) {
-    new PrintUtilities(c).print();
+    new PrintClass(c).print();
   }
   
-  public PrintUtilities(Component componentToBePrinted) {
+  public PrintClass(Component componentToBePrinted) {
     this.componentToBePrinted = componentToBePrinted;
   }
   

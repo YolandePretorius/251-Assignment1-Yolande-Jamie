@@ -25,6 +25,7 @@ import javax.swing.JMenuItem;
 import java.awt.Color;
 import javax.swing.JMenuBar;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JScrollBar;
 import javax.swing.JMenu;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -51,18 +52,23 @@ import java.awt.TextArea;
 import java.awt.Cursor;
 import javax.swing.JTextPane;
 import javax.swing.RepaintManager;
+import javax.swing.JTextField;
+import javax.swing.DropMode;
 
-public class TextMainWindow extends JFrame implements Printable {
+public class TextMainWindow extends JFrame  {
 	
+	JMenuBar menuBar;
+	//JFrame window;
+	//JTextArea textArea;
+	JScrollPane scrollPane;
 	String filename;
 
 	private JPanel contentPane;
-	/**
-	 * @wbp.nonvisual location=185,-16
-	 */
-	private final JEditorPane editorPane = new JEditorPane();
-	private final JTextArea textArea = new JTextArea();
+	 JTextArea textArea = new JTextArea();
+	
+	private JTextField textField;
 	//public TextArea textArea; 
+	protected TextMainWindow window;
 	
 	/**
 	 * Launch the application.
@@ -71,8 +77,8 @@ public class TextMainWindow extends JFrame implements Printable {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TextMainWindow frame = new TextMainWindow();
-					frame.setVisible(true);
+					TextMainWindow window = new TextMainWindow();
+					window.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -83,11 +89,12 @@ public class TextMainWindow extends JFrame implements Printable {
 	/**
 	 * Create the frame.
 	 */
-	public TextMainWindow() {
+	public TextMainWindow() {							//Constructor
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(200, 200, 850, 700);
 		setTitle("Textpad");
-		
+				
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
@@ -111,7 +118,7 @@ public class TextMainWindow extends JFrame implements Printable {
 		openFileMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				filename = OpenFileClass.openFunction(filename,textArea,TextMainWindow.this); //Class: Open a file 
+				filename = OpenFileClass.openFunction(filename,textArea,window); //Class: Open a file 
 				setTitle(filename);
 					
 				}
@@ -123,11 +130,13 @@ public class TextMainWindow extends JFrame implements Printable {
 		JSeparator separator = new JSeparator();
 		fileMenu.add(separator);
 		
+		//Save Class
+		
 		JMenuItem saveMenu = new JMenuItem("Save");
 		saveMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				filename = SaveClass.saveMethod(filename,textArea, TextMainWindow.this);
+				filename = SaveClass.saveMethod(filename,textArea, window);
 				setTitle(filename);
 				
 			}
@@ -136,11 +145,13 @@ public class TextMainWindow extends JFrame implements Printable {
 		
 		fileMenu.add(saveMenu);
 		
+		//Save As class
+		
 		JMenuItem SaveAs = new JMenuItem("Save As");
 		SaveAs .addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				filename = SaveAsClass.SaveAsFunction(filename,textArea,TextMainWindow.this); //Class: save a file 
+				filename = SaveAsClass.SaveAsFunction(filename,textArea,window); //Class: save a file 
 				setTitle(filename);
 			}
 		});
@@ -151,11 +162,14 @@ public class TextMainWindow extends JFrame implements Printable {
 		fileMenu.add(separator_1);
 		
 		
+		 // Print class
+		
 		JMenuItem printMenu = new JMenuItem("Print");
 		printMenu.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				PrintUtilities.printComponent(textArea);     // Print class 
+				PrintClass.printComponent(textArea);
+			    
 	
 			}
 		});
@@ -166,8 +180,9 @@ public class TextMainWindow extends JFrame implements Printable {
 		fileMenu.add(separator_2);
 		
 		
+		// Exit text editor
 		
-		JMenuItem exitMenu = new JMenuItem("Exit");           // Exit text editor
+		JMenuItem exitMenu = new JMenuItem("Exit");           
 		exitMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(JFrame.EXIT_ON_CLOSE);
@@ -177,54 +192,78 @@ public class TextMainWindow extends JFrame implements Printable {
 		fileMenu.add(exitMenu);
 		
 		
-		JMenuItem searchMenu = new JMenu("Search");
-		menuBar.add(searchMenu);
-		
+		//view Class
 		JMenu viewMenu = new JMenu("View");
 		menuBar.add(viewMenu);
 		
-		JMenu editMenu = new JMenu("Edit");
+		
+		
+		JMenu editMenu = new JMenu("Edit");  //create Edit menu
 		menuBar.add(editMenu);
 		
 		JSeparator separator_3 = new JSeparator();
 		editMenu.add(separator_3);
 		
+		//Cutt Class 
 		JMenuItem cutMenu = new JMenuItem("Cut");
 		editMenu.add(cutMenu);
 		
+		//Copy Class
 		JMenuItem copyMenu = new JMenuItem("Copy");
 		editMenu.add(copyMenu);
 		
+		//Paste Class
 		JMenuItem pasteMenu = new JMenuItem("Paste");
 		editMenu.add(pasteMenu);
+		
 		
 		JSeparator separator_4 = new JSeparator();
 		editMenu.add(separator_4);
 		
+		//Time/Date class
 		JMenuItem timeDateMenu = new JMenuItem("Time/Date");
 		editMenu.add(timeDateMenu);
 		
-		JMenu helpMenu = new JMenu("Help");
+		
+		JMenu helpMenu = new JMenu("Help"); // Create Help Menu
 		menuBar.add(helpMenu);
 		
+		//About Class
 		JMenuItem about = new JMenuItem("About Text Pad");
 		helpMenu.add(about);
+		
+		final JButton SearchButton = new JButton("Search");
+		SearchButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			  
+			    if (textField.getText().equals("")) {
+			    	SearchClass.removeHighlighter(textArea);
+			    }else {
+			    	SearchClass.searchTextArea(textArea, textField.getText());
+			    }
+			}
+		});
+		menuBar.add(SearchButton);
+		
+		// search text field used to add text searching for
+		textField = new JTextField();
+		menuBar.add(textField);
+		textField.setColumns(1);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(1, 0, 0, 0));
 		
-		// Add text area to window frame
+		
+		
+		// text area functions: scroll and set cursor
+		JScrollPane scrollPane_1 = new JScrollPane();
+		contentPane.add(scrollPane_1);
+		scrollPane_1.setViewportView(textArea);
 		textArea.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		contentPane.add(textArea);
 		
 		
 	
-	}
-
-	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 
