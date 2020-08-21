@@ -229,6 +229,7 @@ public class TextMainWindow extends JFrame  {
 		JSeparator separator_3 = new JSeparator();
 		editMenu.add(separator_3);
 
+		// cut selected text and send to system clipboard
 		JMenuItem cutMenu = new JMenuItem("Cut");
 		editMenu.add(cutMenu);
 		cutMenu.addActionListener(new ActionListener() {
@@ -237,6 +238,7 @@ public class TextMainWindow extends JFrame  {
 			}
 		});
 
+		// copy selected text and send to system clipboard
 		JMenuItem copyMenu = new JMenuItem("Copy");
 		editMenu.add(copyMenu);
 		copyMenu.addActionListener(new ActionListener() {
@@ -245,6 +247,7 @@ public class TextMainWindow extends JFrame  {
 			}
 		});
 
+		// paste from system clipboard
 		JMenuItem pasteMenu = new JMenuItem("Paste");
 		editMenu.add(pasteMenu);
 		pasteMenu.addActionListener(new ActionListener() {
@@ -256,6 +259,7 @@ public class TextMainWindow extends JFrame  {
 		JSeparator separator_4 = new JSeparator();
 		editMenu.add(separator_4);
 		
+		// insert date and time at top of text area
 		JMenuItem timeDateMenu = new JMenuItem("Time/Date");
 		editMenu.add(timeDateMenu);
 		timeDateMenu.addActionListener(new ActionListener() {
@@ -267,7 +271,7 @@ public class TextMainWindow extends JFrame  {
 		JMenu helpMenu = new JMenu("Help");
 		menuBar.add(helpMenu);
 
-		
+		// pop-up message box with information on text pad program created
 		JMenuItem aboutMenuItem = new JMenuItem("About Text Pad");
 		helpMenu.add(aboutMenuItem);
 		aboutMenuItem.addActionListener(new ActionListener() {
