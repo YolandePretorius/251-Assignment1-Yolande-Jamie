@@ -228,17 +228,12 @@ public class TextMainWindow extends JFrame  {
 		
 		JSeparator separator_3 = new JSeparator();
 		editMenu.add(separator_3);
-		
-
 
 		JMenuItem cutMenu = new JMenuItem("Cut");
 		editMenu.add(cutMenu);
 		cutMenu.addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent e) {
-//				String s = EditMenu.CutString(textArea.getSelectedText());
-//				textArea.replaceSelection(s);
-				textArea.copy();
+				textArea.cut();
 			}
 		});
 
@@ -246,8 +241,7 @@ public class TextMainWindow extends JFrame  {
 		editMenu.add(copyMenu);
 		copyMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-//				EditMenu.CopyString(textArea.getSelectedText());
-				textArea.cut();
+				textArea.copy();
 			}
 		});
 
@@ -272,12 +266,6 @@ public class TextMainWindow extends JFrame  {
 		
 		JMenu helpMenu = new JMenu("Help");
 		menuBar.add(helpMenu);
-		
-		JMenuItem copyMenuItem = new JMenuItem("Copy");
-		editMenu.add(copyMenuItem);
-		
-		JMenuItem pasteMenuItem = new JMenuItem("Paste");
-		editMenu.add(pasteMenuItem);
 
 		
 		JMenuItem aboutMenuItem = new JMenuItem("About Text Pad");
@@ -287,9 +275,6 @@ public class TextMainWindow extends JFrame  {
 				HelpMenu.aboutPopUp();
 			}
 		});
-		
-		helpMenu.add(aboutMenuItem);
-
 			
 				final JButton SearchButton = new JButton("Search");
 		SearchButton.addActionListener(new ActionListener() {
