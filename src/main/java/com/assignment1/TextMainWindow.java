@@ -272,8 +272,6 @@ public class TextMainWindow extends JFrame  {
 		
 		JMenu helpMenu = new JMenu("Help");
 		menuBar.add(helpMenu);
-		helpMenu.add(about);
-
 		
 		JMenuItem copyMenuItem = new JMenuItem("Copy");
 		editMenu.add(copyMenuItem);
@@ -283,6 +281,7 @@ public class TextMainWindow extends JFrame  {
 
 		
 		JMenuItem aboutMenuItem = new JMenuItem("About Text Pad");
+		helpMenu.add(aboutMenuItem);
 		aboutMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				HelpMenu.aboutPopUp();
