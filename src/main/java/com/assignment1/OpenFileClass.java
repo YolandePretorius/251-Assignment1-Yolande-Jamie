@@ -1,62 +1,51 @@
 package com.assignment1;
 
 import java.awt.FileDialog;
+
 import java.awt.Frame;
 import java.awt.TextArea;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 import javax.swing.JTextArea;
-
 
 
 public class OpenFileClass{  // class used to open a file from file system
 	
 	
-	public static String openFunction(String filename,JTextArea textArea, TextMainWindow window){
+	public static String openFunction(String filename){
 		
-		String lineCompound = "";
+		 //Create a String that will store all text in the text file  
+		  String storeAllString="";  
+	  	if (filename != null){
+	  		try {
+	  			
+	  			BufferedReader readTextFile = new BufferedReader(new FileReader(filename));
+	  		 		  
+	  		  //Create a scanner object from FileReader  
+	  		  Scanner fileReaderScan=new Scanner(readTextFile);  
+	  		  	 
+	  		  
+	  		  //Put all text from text file into created String  
+	  		  while(fileReaderScan.hasNextLine())  
+	  		  {  
+	  		   String temp=fileReaderScan.nextLine()+"\n";  
+	  		    
+	  		   storeAllString=storeAllString+temp;  
+	  		  }  
+	  		return storeAllString;
+	  			
+	  		} catch (FileNotFoundException e1) {
+	  	}
+	  		
+	  }
+	  	return storeAllString;
 		
-		FileDialog fileDialog = new FileDialog(window, "Open File ",FileDialog.LOAD);
-		fileDialog.setVisible(true);
-		
-		// set file name at the top of the window
-		if (fileDialog.getFile() != null) {
-			filename = fileDialog.getDirectory() + fileDialog.getFile();
-			}
-		if (filename != null){	
-			try {
-				BufferedReader reader = new BufferedReader(new FileReader(filename));
-				
-				
-				String line = null;
-				String lineCompoundFile = "";
-				
-				while ((line = reader.readLine()) != null) {
-					lineCompoundFile = lineCompoundFile +  line; // read lines from file into lineCompound
-				}
-				
-				reader.close();
-				textArea.setText(lineCompoundFile.toString()); // Set text read from file on textArea 
-			
-			} catch (FileNotFoundException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			} catch (IOException e1) {
-				System.out.println("File not found");
-				e1.printStackTrace();
-			}
-		}
-		return filename;
-	
 	}
-
 	
-
 	
-
-	
-
 }
+	
