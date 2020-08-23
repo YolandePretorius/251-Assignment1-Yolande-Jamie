@@ -74,8 +74,6 @@ import javax.swing.DropMode;
 public class TextMainWindow extends JFrame  {
 	
 	JMenuBar menuBar;
-	//JFrame window;
-	//JTextArea textArea;
 	JScrollPane scrollPane;
 	String filename;
 
@@ -230,7 +228,6 @@ public class TextMainWindow extends JFrame  {
 		
 		fileMenu.add(exitMenu);
 
-		
 		JMenu editMenu = new JMenu("Edit");  //create Edit menu
 
 		menuBar.add(editMenu);

@@ -16,7 +16,6 @@ import javax.swing.JTextArea;
 public class OpenFileClass{  // class used to open a file from file system
 	
 	
-
 	public static String openFunction(String filename){
 		
 		 //Create a String that will store all text in the text file  
@@ -45,10 +44,8 @@ public class OpenFileClass{  // class used to open a file from file system
 	  }
 	  	return storeAllString;
 
-		
 	}
 	
 	
-
 }
 	
