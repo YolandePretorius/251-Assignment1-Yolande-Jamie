@@ -39,6 +39,7 @@ public class SearchClass extends  myHighLighter {
 		try {
 			Highlighter hilight = textArea.getHighlighter();
 			Document doc = textArea.getDocument();
+			
 			String text = doc.getText(0, doc.getLength());
 			
 			int pos = 0;
@@ -67,7 +68,5 @@ public class SearchClass extends  myHighLighter {
 				
 	}
 	
-	
-	//DefaultHighlighter.HighlightPainter highlighter = new myHighLighter(Color.GREEN);
 	
 
