@@ -10,7 +10,7 @@ import javax.swing.JTextArea;
 
 public class SaveAsClass {
 	
-	public static String SaveAsFunction(String filename, JTextArea textArea, TextMainWindow window) {
+	public static String SaveAsFunction(String filename,String  textArea, TextMainWindow window) {
 		
 		FileDialog fileDialog = new FileDialog(window, "Save File ", FileDialog.SAVE);	//Open window to safe file
 		fileDialog.setVisible(true);
@@ -23,7 +23,7 @@ public class SaveAsClass {
 		if (filename != null){
 			try {
 				FileWriter fileWriter = new FileWriter(filename); // create new file
-				fileWriter.write(textArea.getText());
+				fileWriter.write(textArea);
 				fileWriter.close();
 			} catch (IOException e) {
 				System.out.println("File not found");
