@@ -231,10 +231,6 @@ public class TextMainWindow extends JFrame  {
 		fileMenu.add(exitMenu);
 
 		
-		//view Class
-		JMenu viewMenu = new JMenu("View");
-		menuBar.add(viewMenu);
-		
 		JMenu editMenu = new JMenu("Edit");  //create Edit menu
 
 		menuBar.add(editMenu);
