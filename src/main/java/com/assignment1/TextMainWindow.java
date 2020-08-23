@@ -41,6 +41,7 @@ import java.awt.print.Printable;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -133,8 +134,17 @@ public class TextMainWindow extends JFrame  {
 		JMenuItem openFileMenu = new JMenuItem("Open File");
 		openFileMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				FileDialog fileDialog = new FileDialog(window, "Open File ",FileDialog.LOAD);
+				fileDialog.setVisible(true);
 				
-				filename = OpenFileClass.openFunction(filename,textArea,window); //Class: Open a file 
+				// set file name at the top of the window
+				if (fileDialog.getFile() != null) {
+					filename = fileDialog.getDirectory() + fileDialog.getFile();
+					}
+				
+				String fileContent = OpenFileClass.openFunction(filename); //Class: Open a file 
+				
+				textArea.setText(fileContent); // Set text read from file on textArea
 				setTitle(filename);
 					
 				}
@@ -153,10 +163,13 @@ public class TextMainWindow extends JFrame  {
 		JMenuItem saveMenu = new JMenuItem("Save");
 		saveMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
 
-				filename = SaveClass.saveMethod(filename,textArea, window);
-				setTitle(filename);
+				if (filename != null) {					
+					SaveClass.saveMethod(filename,textArea.getText());
+					
+				}else {
+					filename = SaveAsClass.SaveAsFunction(filename, textArea.getText(), window);
+				}setTitle(filename);
 				
 			}
 		});
@@ -172,8 +185,8 @@ public class TextMainWindow extends JFrame  {
 		SaveAs .addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				filename = SaveAsClass.SaveAsFunction(filename,textArea.getText(),window); //Class: save a file 
 
-				filename = SaveAsClass.SaveAsFunction(filename,textArea,window); //Class: save a file 
 				setTitle(filename);
 			}
 		});
