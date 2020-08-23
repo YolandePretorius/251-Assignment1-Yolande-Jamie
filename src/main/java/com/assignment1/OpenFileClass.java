@@ -43,7 +43,7 @@ public class OpenFileClass{  // class used to open a file from file system
 	  		
 	  }
 	  	return storeAllString;
-		
+
 	}
 	
 	
