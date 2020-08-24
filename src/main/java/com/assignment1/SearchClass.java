@@ -2,11 +2,9 @@ package com.assignment1;
 
 import java.awt.Color;
 
-import javax.swing.JTextArea;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Document;
 import javax.swing.text.Highlighter;
-import javax.swing.text.Highlighter.HighlightPainter;
 import javax.swing.text.JTextComponent;
 
 public class SearchClass extends  myHighLighter {

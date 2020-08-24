@@ -1,12 +1,8 @@
 package com.assignment1;
 
-import java.awt.Cursor;
 import java.awt.FileDialog;
-import java.awt.TextArea;
 import java.io.FileWriter;
 import java.io.IOException;
-
-import javax.swing.JTextArea;
 
 public class SaveAsClass {
 	

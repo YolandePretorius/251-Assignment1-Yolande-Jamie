@@ -7,68 +7,18 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
-import javax.swing.BoxLayout;
 import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.JInternalFrame;
-import java.awt.Component;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JDesktopPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.FlowLayout;
-import javax.swing.SwingConstants;
-import javax.swing.JList;
 import javax.swing.JMenuItem;
-import java.awt.Color;
 import javax.swing.JMenuBar;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JScrollBar;
 import javax.swing.JMenu;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-
-import javax.swing.JComboBox;
-import javax.swing.JSpinner;
 import javax.swing.JSeparator;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.print.PageFormat;
-import java.awt.print.Printable;
-import java.awt.print.PrinterException;
-import java.awt.print.PrinterJob;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
-import javax.swing.JEditorPane;
-import java.awt.TextField;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
-
 import javax.swing.JTextArea;
-import java.awt.TextArea;
-
 import java.awt.Cursor;
-import javax.swing.JTextPane;
-import javax.swing.RepaintManager;
-
-
 import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.ButtonGroup;
-
-
-import java.awt.Cursor;
-import javax.swing.JTextPane;
-import javax.swing.RepaintManager;
 import javax.swing.JTextField;
-import javax.swing.DropMode;
 
 
 public class TextMainWindow extends JFrame  {

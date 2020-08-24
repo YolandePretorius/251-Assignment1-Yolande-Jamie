@@ -1,13 +1,7 @@
 package com.assignment1;
 
-import java.awt.FileDialog;
-import java.awt.Frame;
-import java.awt.TextArea;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
-import javax.swing.JTextArea;
 
 public class SaveClass {
 
