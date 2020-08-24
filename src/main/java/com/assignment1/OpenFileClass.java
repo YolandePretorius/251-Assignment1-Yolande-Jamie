@@ -29,12 +29,14 @@ public class OpenFileClass{  // class used to open a file from file system
 	  		    
 	  		   storeAllString=storeAllString+temp;  
 	  		  }  
+	  		fileReaderScan.close();
 	  		return storeAllString;
 	  			
 	  		} catch (FileNotFoundException e1) {
 	  	}
 	  		
 	  }
+	  	
 	  	return storeAllString;
 
 	}
