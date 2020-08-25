@@ -54,7 +54,9 @@ Type a word in the text box next to search and press the search button. The word
 
 __Files that are included to test:__ 
 
-1. Stories.txt - this is a file that contains text and can be used to test the open file function.
+1. Travis Cl test can be done to check test unit SafeOpen
+
+2. Stories.txt - this is a file that contains text and can be used to test the open file function.
 
 2. Stories.pdf can also be used to test the open file function
 
