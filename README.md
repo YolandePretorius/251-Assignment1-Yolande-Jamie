@@ -54,7 +54,7 @@ Type a word in the text box next to search and press the search button. The word
 
 __Files that are included to test:__ 
 
-1. Travis Cl test can be done to check test unit SafeOpen
+1. Travis Cl can be used to build and test software.
 
 2. Stories.txt - this is a file that contains text and can be used to test the open file function.
 
