@@ -7,33 +7,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.GridLayout;
-import javax.swing.BoxLayout;
 import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.JInternalFrame;
-import java.awt.Component;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JDesktopPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.FlowLayout;
-import javax.swing.SwingConstants;
-import javax.swing.JList;
 import javax.swing.JMenuItem;
-import java.awt.Color;
 import javax.swing.JMenuBar;
-import javax.swing.JRadioButtonMenuItem;
-import javax.swing.JScrollBar;
 import javax.swing.JMenu;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-
-import javax.swing.JComboBox;
-import javax.swing.JSpinner;
 import javax.swing.JSeparator;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.print.PageFormat;
@@ -65,10 +47,9 @@ import javax.swing.ButtonGroup;
 
 
 import java.awt.Cursor;
-import javax.swing.JTextPane;
-import javax.swing.RepaintManager;
+import javax.swing.AbstractAction;
 import javax.swing.JTextField;
-import javax.swing.DropMode;
+
 
 
 public class TextMainWindow extends JFrame  {
@@ -235,6 +216,10 @@ public class TextMainWindow extends JFrame  {
 		JSeparator separator_3 = new JSeparator();
 		editMenu.add(separator_3);
 
+
+
+		// cut selected text and send to system clipboard
+
 		JMenuItem cutMenu = new JMenuItem("Cut");
 		editMenu.add(cutMenu);
 		cutMenu.addActionListener(new ActionListener() {
@@ -243,6 +228,9 @@ public class TextMainWindow extends JFrame  {
 			}
 		});
 
+
+		// copy selected text and send to system clipboard
+
 		JMenuItem copyMenu = new JMenuItem("Copy");
 		editMenu.add(copyMenu);
 		copyMenu.addActionListener(new ActionListener() {
@@ -250,6 +238,9 @@ public class TextMainWindow extends JFrame  {
 				textArea.copy();
 			}
 		});
+
+
+		// paste from system clipboard
 
 		JMenuItem pasteMenu = new JMenuItem("Paste");
 		editMenu.add(pasteMenu);
@@ -262,6 +253,9 @@ public class TextMainWindow extends JFrame  {
 		JSeparator separator_4 = new JSeparator();
 		editMenu.add(separator_4);
 		
+
+		// insert date and time at top of text area
+
 		JMenuItem timeDateMenu = new JMenuItem("Time/Date");
 		editMenu.add(timeDateMenu);
 		timeDateMenu.addActionListener(new ActionListener() {
@@ -273,7 +267,8 @@ public class TextMainWindow extends JFrame  {
 		JMenu helpMenu = new JMenu("Help");
 		menuBar.add(helpMenu);
 
-		
+		// pop-up message box with information on text pad program created
+
 		JMenuItem aboutMenuItem = new JMenuItem("About Text Pad");
 		helpMenu.add(aboutMenuItem);
 		aboutMenuItem.addActionListener(new ActionListener() {

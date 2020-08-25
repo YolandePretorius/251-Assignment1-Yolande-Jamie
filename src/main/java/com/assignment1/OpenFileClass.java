@@ -1,16 +1,9 @@
 package com.assignment1;
 
-import java.awt.FileDialog;
-
-import java.awt.Frame;
-import java.awt.TextArea;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.Scanner;
-
-import javax.swing.JTextArea;
 
 
 public class OpenFileClass{  // class used to open a file from file system
@@ -36,12 +29,14 @@ public class OpenFileClass{  // class used to open a file from file system
 	  		    
 	  		   storeAllString=storeAllString+temp;  
 	  		  }  
+	  		fileReaderScan.close();
 	  		return storeAllString;
 	  			
 	  		} catch (FileNotFoundException e1) {
 	  	}
 	  		
 	  }
+	  	
 	  	return storeAllString;
 
 	}
