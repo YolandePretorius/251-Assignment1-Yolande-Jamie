@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 public class HelpMenu {
 
 	public static void aboutPopUp() {
+		// pop-up message to give information on project
 		String about = "ASSIGNMENT 1 TEAM"
 				+ "\nYolande Pretorius\n"
 				+ "Jamie Weddell\n\n"
