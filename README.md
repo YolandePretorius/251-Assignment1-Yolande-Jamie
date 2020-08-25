@@ -56,6 +56,8 @@ __Files that are included to test:__
 
 1. Travis Cl can be used to build and test software.
 
+[![Build Status](https://travis-ci.com/YolandePretorius/251-Assignment1-Yolande-Jamie.svg?token=DvnouvyCuJLokTqu4RGf&branch=master)](https://travis-ci.com/YolandePretorius/251-Assignment1-Yolande-Jamie)
+
 2. Stories.txt - this is a file that contains text and can be used to test the open file function.
 
 2. Stories.pdf can also be used to test the open file function
