@@ -11,7 +11,7 @@ import javax.swing.JTextArea;
 public class SaveAsClass {
 	
 	public static String SaveAsFunction(String filename,String  textArea, TextMainWindow window) {
-		
+
 		FileDialog fileDialog = new FileDialog(window, "Save File ", FileDialog.SAVE);	//Open window to safe file
 		fileDialog.setVisible(true);
 	

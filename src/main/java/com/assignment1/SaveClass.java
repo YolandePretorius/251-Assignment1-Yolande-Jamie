@@ -11,7 +11,7 @@ import javax.swing.JTextArea;
 
 public class SaveClass {
 
-	
+
 	public static void saveMethod(String fileName, String textArea) {		
 		
 		
@@ -27,4 +27,5 @@ public class SaveClass {
 				
 
 		}
+
 }
