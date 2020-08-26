@@ -60,7 +60,7 @@
                       <id>pmd</id>
                       <phase>compile</phase>
                       <goals>
-                         <goal>check</goal>
+                         <goal>pmd</goal>
                       </goals>
                       <configuration>
                         <format>xml</format>
