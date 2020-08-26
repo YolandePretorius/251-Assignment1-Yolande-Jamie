@@ -2,8 +2,8 @@
 Metrics
 
 Per Class:
-1	TextMainWindow:	Lines of Code:	138	Number of methods:  3
-2	SearchClass:	Lines of Code:	21	Number of methods:  3
+1	TextMainWindow:	Lines of Code:	138	Number of methods:  1
+2	SearchClass:	Lines of Code:	21	Number of methods:  2
 3	myHighLighter:	Lines of Code:	4	Number of methods:
 4	PrintClass:	Lines of Code:	30	Number of methods:  3
 5	PrintUtilities:	Lines of Code:	30	Number of methods:  3
@@ -13,9 +13,14 @@ Per Class:
 9	SaveClass:	Lines of Code:	9	Number of methods:  0
 10	EditMenu:	Lines of Code:	5	Number of methods:  0
 
+Lines of code is pulled from CodeMR (image included in folder, per below)
+Number of methods is pulled from the Eclipse Metrics report
+
 
 Code Complexity
-
+Cyclomatic Complexity    Mean: 1.708, Maximum: 4
+Efferent Coupling        mean:0.5, maximum:1
 
 
 CodeMR report can be found under $project$\codemr\251-Assignment1-Yolande-Jamie\html\main_report\htmlx\lbd\table.html
+Was hoping to show a better report but couldn't get CodeMr to export to a nice html file in the correct folder

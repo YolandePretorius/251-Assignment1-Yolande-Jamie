@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Metrics scope="251-Assignment1-Yolande-Jamie" type="Project" date="2020-08-24" xmlns="http://metrics.sourceforge.net/2003/Metrics-First-Flat">
+<Metrics scope="251-Assignment1-Yolande-Jamie" type="Project" date="2020-08-27" xmlns="http://metrics.sourceforge.net/2003/Metrics-First-Flat">
    <Metric id = "VG" description ="McCabe Cyclomatic Complexity" max ="10" hint ="use Extract-method to split the method up">
-      <Values per = "method" avg = "1.654" stddev = "0.998" max = "4">
+      <Values per = "method" avg = "1.708" stddev = "1.02" max = "4">
          <Value name="openFunction" source ="OpenFileClass.java" package ="com.assignment1" value ="4"/>
          <Value name="SaveAsFunction" source ="SaveAsClass.java" package ="com.assignment1" value ="4"/>
          <Value name="print" source ="PrintClass.java" package ="com.assignment1" value ="3"/>
@@ -15,7 +15,7 @@
          <Value name="TextMainWindow.anonymous#[!2#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
          <Value name="TextMainWindow.anonymous#[!3#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
          <Value name="TextMainWindow.anonymous#~main~\[QString;[#run" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
-         <Value name="TimeAndDate" source ="EditMenu.java" package ="com.assignment1" value ="1"/>
+         <Value name="timeAndDate" source ="EditMenu.java" package ="com.assignment1" value ="1"/>
          <Value name="aboutPopUp" source ="HelpMenu.java" package ="com.assignment1" value ="1"/>
          <Value name="PrintClass" source ="PrintClass.java" package ="com.assignment1" value ="1"/>
          <Value name="disableDoubleBuffering" source ="PrintClass.java" package ="com.assignment1" value ="1"/>
@@ -27,8 +27,6 @@
          <Value name="printComponent" source ="PrintUtilities.java" package ="com.assignment1" value ="1"/>
          <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
          <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.SwingAction#SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.SwingAction#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
          <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
          <Value name="TextMainWindow.anonymous#[!10#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
          <Value name="TextMainWindow.anonymous#[!11#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
@@ -43,8 +41,80 @@
          <Value name="testWrite" source ="SaveOpenTest.java" package ="com.assignment1" value ="1"/>
       </Values>
    </Metric>
+   <Metric id = "TLOC" description ="Total Lines of Code">
+      <Value value="416"/>
+   </Metric>
+   <Metric id = "MLOC" description ="Method Lines of Code">
+      <Values per = "method" total = "271" avg = "11.292" stddev = "25.988" max = "134">
+         <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="134"/>
+         <Value name="openFunction" source ="OpenFileClass.java" package ="com.assignment1" value ="16"/>
+         <Value name="SaveAsFunction" source ="SaveAsClass.java" package ="com.assignment1" value ="15"/>
+         <Value name="searchTextArea" source ="SearchClass.java" package ="com.assignment1" value ="12"/>
+         <Value name="print" source ="PrintClass.java" package ="com.assignment1" value ="10"/>
+         <Value name="print" source ="PrintUtilities.java" package ="com.assignment1" value ="10"/>
+         <Value name="main" source ="TextMainWindow.java" package ="com.assignment1" value ="10"/>
+         <Value name="aboutPopUp" source ="HelpMenu.java" package ="com.assignment1" value ="8"/>
+         <Value name="print" source ="PrintClass.java" package ="com.assignment1" value ="8"/>
+         <Value name="print" source ="PrintUtilities.java" package ="com.assignment1" value ="8"/>
+         <Value name="saveMethod" source ="SaveClass.java" package ="com.assignment1" value ="8"/>
+         <Value name="TextMainWindow.anonymous#[!2#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="8"/>
+         <Value name="removeHighlighter" source ="SearchClass.java" package ="com.assignment1" value ="7"/>
+         <Value name="testWrite" source ="SaveOpenTest.java" package ="com.assignment1" value ="7"/>
+         <Value name="TextMainWindow.anonymous#~main~\[QString;[#run" source ="TextMainWindow.java" package ="com.assignment1" value ="6"/>
+         <Value name="TextMainWindow.anonymous#[!12#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="5"/>
+         <Value name="TextMainWindow.anonymous#[!3#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="5"/>
+         <Value name="timeAndDate" source ="EditMenu.java" package ="com.assignment1" value ="3"/>
+         <Value name="TextMainWindow.anonymous#[#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="3"/>
+         <Value name="disableDoubleBuffering" source ="PrintClass.java" package ="com.assignment1" value ="2"/>
+         <Value name="enableDoubleBuffering" source ="PrintClass.java" package ="com.assignment1" value ="2"/>
+         <Value name="disableDoubleBuffering" source ="PrintUtilities.java" package ="com.assignment1" value ="2"/>
+         <Value name="enableDoubleBuffering" source ="PrintUtilities.java" package ="com.assignment1" value ="2"/>
+         <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="2"/>
+         <Value name="TextMainWindow.anonymous#[!4#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
+         <Value name="PrintClass" source ="PrintClass.java" package ="com.assignment1" value ="1"/>
+         <Value name="printComponent" source ="PrintClass.java" package ="com.assignment1" value ="1"/>
+         <Value name="PrintUtilities" source ="PrintUtilities.java" package ="com.assignment1" value ="1"/>
+         <Value name="printComponent" source ="PrintUtilities.java" package ="com.assignment1" value ="1"/>
+         <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!10#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!11#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!5#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!6#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!7#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!8#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!9#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOM" description ="Number of Methods">
+      <Values per = "type" total = "10" avg = "0.909" stddev = "1.083" max = "3">
+         <Value name="PrintClass" source ="PrintClass.java" package ="com.assignment1" value ="3"/>
+         <Value name="PrintUtilities" source ="PrintUtilities.java" package ="com.assignment1" value ="3"/>
+         <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
+         <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!10" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!11" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!12" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!2" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!3" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!4" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!5" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!6" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!7" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!8" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#[!9" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="TextMainWindow.anonymous#~main~\[QString;[" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
+         <Value name="SaveOpenTest" source ="SaveOpenTest.java" package ="com.assignment1" value ="1"/>
+         <Value name="EditMenu" source ="EditMenu.java" package ="com.assignment1" value ="0"/>
+         <Value name="HelpMenu" source ="HelpMenu.java" package ="com.assignment1" value ="0"/>
+         <Value name="OpenFileClass" source ="OpenFileClass.java" package ="com.assignment1" value ="0"/>
+         <Value name="SaveAsClass" source ="SaveAsClass.java" package ="com.assignment1" value ="0"/>
+         <Value name="SaveClass" source ="SaveClass.java" package ="com.assignment1" value ="0"/>
+      </Values>
+   </Metric>
    <Metric id = "PAR" description ="Number of Parameters" max ="5" hint ="Move invoked method or pass an object">
-      <Values per = "method" avg = "1.038" stddev = "0.898" max = "3">
+      <Values per = "method" avg = "1.083" stddev = "0.909" max = "3">
          <Value name="print" source ="PrintClass.java" package ="com.assignment1" value ="3"/>
          <Value name="print" source ="PrintUtilities.java" package ="com.assignment1" value ="3"/>
          <Value name="SaveAsFunction" source ="SaveAsClass.java" package ="com.assignment1" value ="3"/>
@@ -62,7 +132,6 @@
          <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
          <Value name="removeHighlighter" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
          <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.SwingAction#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
          <Value name="TextMainWindow.anonymous#[!10#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
          <Value name="TextMainWindow.anonymous#[!11#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
          <Value name="TextMainWindow.anonymous#[!12#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
@@ -76,18 +145,17 @@
          <Value name="TextMainWindow.anonymous#[!9#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
          <Value name="TextMainWindow.anonymous#[#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
          <Value name="main" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TimeAndDate" source ="EditMenu.java" package ="com.assignment1" value ="0"/>
+         <Value name="timeAndDate" source ="EditMenu.java" package ="com.assignment1" value ="0"/>
          <Value name="aboutPopUp" source ="HelpMenu.java" package ="com.assignment1" value ="0"/>
          <Value name="print" source ="PrintClass.java" package ="com.assignment1" value ="0"/>
          <Value name="print" source ="PrintUtilities.java" package ="com.assignment1" value ="0"/>
-         <Value name="TextMainWindow.SwingAction#SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#~main~\[QString;[#run" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="testWrite" source ="SaveOpenTest.java" package ="com.assignment1" value ="0"/>
       </Values>
    </Metric>
    <Metric id = "NBD" description ="Nested Block Depth" max ="5" hint ="use Extract-method to split the method up">
-      <Values per = "method" avg = "1.692" stddev = "0.91" max = "4">
+      <Values per = "method" avg = "1.75" stddev = "0.924" max = "4">
          <Value name="openFunction" source ="OpenFileClass.java" package ="com.assignment1" value ="4"/>
          <Value name="SaveAsFunction" source ="SaveAsClass.java" package ="com.assignment1" value ="3"/>
          <Value name="removeHighlighter" source ="SearchClass.java" package ="com.assignment1" value ="3"/>
@@ -103,7 +171,7 @@
          <Value name="TextMainWindow.anonymous#[!2#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
          <Value name="TextMainWindow.anonymous#[!3#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
          <Value name="TextMainWindow.anonymous#~main~\[QString;[#run" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
-         <Value name="TimeAndDate" source ="EditMenu.java" package ="com.assignment1" value ="1"/>
+         <Value name="timeAndDate" source ="EditMenu.java" package ="com.assignment1" value ="1"/>
          <Value name="aboutPopUp" source ="HelpMenu.java" package ="com.assignment1" value ="1"/>
          <Value name="PrintClass" source ="PrintClass.java" package ="com.assignment1" value ="1"/>
          <Value name="disableDoubleBuffering" source ="PrintClass.java" package ="com.assignment1" value ="1"/>
@@ -115,8 +183,6 @@
          <Value name="printComponent" source ="PrintUtilities.java" package ="com.assignment1" value ="1"/>
          <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
          <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.SwingAction#SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.SwingAction#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
          <Value name="TextMainWindow.anonymous#[!10#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
          <Value name="TextMainWindow.anonymous#[!11#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
          <Value name="TextMainWindow.anonymous#[!4#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
@@ -160,11 +226,10 @@
       </Values>
    </Metric>
    <Metric id = "DIT" description ="Depth of Inheritance Tree">
-      <Values per = "type" avg = "1.917" stddev = "1.552" max = "6">
+      <Values per = "type" avg = "1.909" stddev = "1.621" max = "6">
          <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="6"/>
          <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="4"/>
          <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="3"/>
-         <Value name="TextMainWindow.SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
          <Value name="EditMenu" source ="EditMenu.java" package ="com.assignment1" value ="1"/>
          <Value name="HelpMenu" source ="HelpMenu.java" package ="com.assignment1" value ="1"/>
          <Value name="OpenFileClass" source ="OpenFileClass.java" package ="com.assignment1" value ="1"/>
@@ -189,7 +254,7 @@
       </Values>
    </Metric>
    <Metric id = "WMC" description ="Weighted methods per Class">
-      <Values per = "type" total = "43" avg = "3.583" stddev = "2.957" max = "9">
+      <Values per = "type" total = "41" avg = "3.727" stddev = "3.048" max = "9">
          <Value name="PrintClass" source ="PrintClass.java" package ="com.assignment1" value ="9"/>
          <Value name="PrintUtilities" source ="PrintUtilities.java" package ="com.assignment1" value ="9"/>
          <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="7"/>
@@ -197,7 +262,6 @@
          <Value name="SaveAsClass" source ="SaveAsClass.java" package ="com.assignment1" value ="4"/>
          <Value name="SaveClass" source ="SaveClass.java" package ="com.assignment1" value ="2"/>
          <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
-         <Value name="TextMainWindow.SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
          <Value name="TextMainWindow.anonymous#[!12" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
          <Value name="TextMainWindow.anonymous#[!2" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
          <Value name="TextMainWindow.anonymous#[!3" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
@@ -218,7 +282,7 @@
       </Values>
    </Metric>
    <Metric id = "NSC" description ="Number of Children">
-      <Values per = "type" total = "1" avg = "0.083" stddev = "0.276" max = "1">
+      <Values per = "type" total = "1" avg = "0.091" stddev = "0.287" max = "1">
          <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
          <Value name="EditMenu" source ="EditMenu.java" package ="com.assignment1" value ="0"/>
          <Value name="HelpMenu" source ="HelpMenu.java" package ="com.assignment1" value ="0"/>
@@ -229,7 +293,6 @@
          <Value name="SaveClass" source ="SaveClass.java" package ="com.assignment1" value ="0"/>
          <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
-         <Value name="TextMainWindow.SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!10" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!11" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
@@ -258,7 +321,6 @@
          <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="0"/>
          <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
-         <Value name="TextMainWindow.SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!10" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!11" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
@@ -287,7 +349,6 @@
          <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="0"/>
          <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
-         <Value name="TextMainWindow.SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!10" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!11" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
@@ -305,7 +366,7 @@
       </Values>
    </Metric>
    <Metric id = "NOF" description ="Number of Attributes">
-      <Values per = "type" total = "10" avg = "0.833" stddev = "1.908" max = "7">
+      <Values per = "type" total = "10" avg = "0.909" stddev = "1.975" max = "7">
          <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="7"/>
          <Value name="PrintClass" source ="PrintClass.java" package ="com.assignment1" value ="1"/>
          <Value name="PrintUtilities" source ="PrintUtilities.java" package ="com.assignment1" value ="1"/>
@@ -317,7 +378,6 @@
          <Value name="SaveClass" source ="SaveClass.java" package ="com.assignment1" value ="0"/>
          <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="0"/>
          <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="0"/>
-         <Value name="TextMainWindow.SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!10" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!11" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
@@ -334,7 +394,7 @@
       </Values>
    </Metric>
    <Metric id = "NSF" description ="Number of Static Attributes">
-      <Values per = "type" total = "1" avg = "0.083" stddev = "0.276" max = "1">
+      <Values per = "type" total = "1" avg = "0.091" stddev = "0.287" max = "1">
          <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
          <Value name="EditMenu" source ="EditMenu.java" package ="com.assignment1" value ="0"/>
          <Value name="HelpMenu" source ="HelpMenu.java" package ="com.assignment1" value ="0"/>
@@ -345,7 +405,6 @@
          <Value name="SaveClass" source ="SaveClass.java" package ="com.assignment1" value ="0"/>
          <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
-         <Value name="TextMainWindow.SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!10" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!11" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
@@ -362,37 +421,8 @@
          <Value name="SaveOpenTest" source ="SaveOpenTest.java" package ="com.assignment1" value ="0"/>
       </Values>
    </Metric>
-   <Metric id = "NOM" description ="Number of Methods">
-      <Values per = "type" total = "12" avg = "1" stddev = "1.08" max = "3">
-         <Value name="PrintClass" source ="PrintClass.java" package ="com.assignment1" value ="3"/>
-         <Value name="PrintUtilities" source ="PrintUtilities.java" package ="com.assignment1" value ="3"/>
-         <Value name="TextMainWindow.SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
-         <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
-         <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!10" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!11" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!12" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!2" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!3" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!4" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!5" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!6" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!7" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!8" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!9" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#~main~\[QString;[" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="SaveOpenTest" source ="SaveOpenTest.java" package ="com.assignment1" value ="1"/>
-         <Value name="EditMenu" source ="EditMenu.java" package ="com.assignment1" value ="0"/>
-         <Value name="HelpMenu" source ="HelpMenu.java" package ="com.assignment1" value ="0"/>
-         <Value name="OpenFileClass" source ="OpenFileClass.java" package ="com.assignment1" value ="0"/>
-         <Value name="SaveAsClass" source ="SaveAsClass.java" package ="com.assignment1" value ="0"/>
-         <Value name="SaveClass" source ="SaveClass.java" package ="com.assignment1" value ="0"/>
-      </Values>
-   </Metric>
    <Metric id = "NSM" description ="Number of Static Methods">
-      <Values per = "type" total = "14" avg = "1.167" stddev = "0.986" max = "3">
+      <Values per = "type" total = "14" avg = "1.273" stddev = "0.962" max = "3">
          <Value name="PrintClass" source ="PrintClass.java" package ="com.assignment1" value ="3"/>
          <Value name="PrintUtilities" source ="PrintUtilities.java" package ="com.assignment1" value ="3"/>
          <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="2"/>
@@ -403,7 +433,6 @@
          <Value name="SaveClass" source ="SaveClass.java" package ="com.assignment1" value ="1"/>
          <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
          <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="0"/>
-         <Value name="TextMainWindow.SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!10" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!11" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
@@ -432,7 +461,6 @@
          <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="0"/>
          <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
-         <Value name="TextMainWindow.SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!10" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
          <Value name="TextMainWindow.anonymous#[!11" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
@@ -450,8 +478,8 @@
       </Values>
    </Metric>
    <Metric id = "NOC" description ="Number of Classes">
-      <Values per = "packageFragment" total = "12" avg = "6" stddev = "5" max = "11">
-         <Value name="com.assignment1" package ="com.assignment1" value ="11"/>
+      <Values per = "packageFragment" total = "11" avg = "5.5" stddev = "4.5" max = "10">
+         <Value name="com.assignment1" package ="com.assignment1" value ="10"/>
          <Value name="com.assignment1" package ="com.assignment1" value ="1"/>
       </Values>
    </Metric>
@@ -463,51 +491,5 @@
    </Metric>
    <Metric id = "NOP" description ="Number of Packages">
       <Value value="2"/>
-   </Metric>
-   <Metric id = "TLOC" description ="Total Lines of Code">
-      <Value value="425"/>
-   </Metric>
-   <Metric id = "MLOC" description ="Method Lines of Code">
-      <Values per = "method" total = "273" avg = "10.5" stddev = "25.12" max = "134">
-         <Value name="TextMainWindow" source ="TextMainWindow.java" package ="com.assignment1" value ="134"/>
-         <Value name="openFunction" source ="OpenFileClass.java" package ="com.assignment1" value ="16"/>
-         <Value name="SaveAsFunction" source ="SaveAsClass.java" package ="com.assignment1" value ="15"/>
-         <Value name="searchTextArea" source ="SearchClass.java" package ="com.assignment1" value ="12"/>
-         <Value name="print" source ="PrintClass.java" package ="com.assignment1" value ="10"/>
-         <Value name="print" source ="PrintUtilities.java" package ="com.assignment1" value ="10"/>
-         <Value name="main" source ="TextMainWindow.java" package ="com.assignment1" value ="10"/>
-         <Value name="aboutPopUp" source ="HelpMenu.java" package ="com.assignment1" value ="8"/>
-         <Value name="print" source ="PrintClass.java" package ="com.assignment1" value ="8"/>
-         <Value name="print" source ="PrintUtilities.java" package ="com.assignment1" value ="8"/>
-         <Value name="saveMethod" source ="SaveClass.java" package ="com.assignment1" value ="8"/>
-         <Value name="TextMainWindow.anonymous#[!2#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="8"/>
-         <Value name="removeHighlighter" source ="SearchClass.java" package ="com.assignment1" value ="7"/>
-         <Value name="testWrite" source ="SaveOpenTest.java" package ="com.assignment1" value ="7"/>
-         <Value name="TextMainWindow.anonymous#~main~\[QString;[#run" source ="TextMainWindow.java" package ="com.assignment1" value ="6"/>
-         <Value name="TextMainWindow.anonymous#[!12#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="5"/>
-         <Value name="TextMainWindow.anonymous#[!3#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="5"/>
-         <Value name="TimeAndDate" source ="EditMenu.java" package ="com.assignment1" value ="3"/>
-         <Value name="TextMainWindow.anonymous#[#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="3"/>
-         <Value name="disableDoubleBuffering" source ="PrintClass.java" package ="com.assignment1" value ="2"/>
-         <Value name="enableDoubleBuffering" source ="PrintClass.java" package ="com.assignment1" value ="2"/>
-         <Value name="disableDoubleBuffering" source ="PrintUtilities.java" package ="com.assignment1" value ="2"/>
-         <Value name="enableDoubleBuffering" source ="PrintUtilities.java" package ="com.assignment1" value ="2"/>
-         <Value name="SearchClass" source ="SearchClass.java" package ="com.assignment1" value ="2"/>
-         <Value name="TextMainWindow.SwingAction#SwingAction" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
-         <Value name="TextMainWindow.anonymous#[!4#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="2"/>
-         <Value name="PrintClass" source ="PrintClass.java" package ="com.assignment1" value ="1"/>
-         <Value name="printComponent" source ="PrintClass.java" package ="com.assignment1" value ="1"/>
-         <Value name="PrintUtilities" source ="PrintUtilities.java" package ="com.assignment1" value ="1"/>
-         <Value name="printComponent" source ="PrintUtilities.java" package ="com.assignment1" value ="1"/>
-         <Value name="myHighLighter" source ="SearchClass.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!10#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!11#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!5#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!6#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!7#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!8#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.anonymous#[!9#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="1"/>
-         <Value name="TextMainWindow.SwingAction#actionPerformed" source ="TextMainWindow.java" package ="com.assignment1" value ="0"/>
-      </Values>
    </Metric>
    </Metrics>
