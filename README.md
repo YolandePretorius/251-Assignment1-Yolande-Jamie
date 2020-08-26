@@ -54,7 +54,11 @@ Type a word in the text box next to search and press the search button. The word
 
 __Files that are included to test:__ 
 
-1. Stories.txt - this is a file that contains text and can be used to test the open file function.
+1. Travis Cl can be used to build and test software.
+
+[![Build Status](https://travis-ci.com/YolandePretorius/251-Assignment1-Yolande-Jamie.svg?token=DvnouvyCuJLokTqu4RGf&branch=master)](https://travis-ci.com/YolandePretorius/251-Assignment1-Yolande-Jamie)
+
+2. Stories.txt - this is a file that contains text and can be used to test the open file function.
 
 2. Stories.pdf can also be used to test the open file function
 
@@ -63,15 +67,24 @@ __Files that are included to test:__
 __Yolande Pretorius:__
 
 commit 91b9e0755ccb56f9c557fe10fc10e54d8d23ebb0
+
 commit 906216e9c9e3973e62bc04fe141c70869bf3042d
+
 commit be6d0ea3dee2150e40ea8803f431532b9422b17a
+
 commit aa26d6027c8d89b72bac8478bcaf314bce3afd3a
+
 commit 9c0302c27523a774a42392645fe339494f53d492
+
 commit 296863765cb2d6c8dbff0a97a71cd703fcf1dffa
+
 
 __Jamie Weddell:__
 
 commit 6743009930daa7fd69d20ceb7389d41e14d4cbbe
+
 commit 2c72b621c747cc1b956e8d48d212a4c2b3410d14
+
 commit 554569373072fd5952f9adb9622822bffe3bc4f7
+
 commit a49f6e085648fc10c31274029fcee0335207cc70

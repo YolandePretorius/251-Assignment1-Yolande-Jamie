@@ -15,10 +15,41 @@ import javax.swing.JMenuItem;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JSeparator;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.print.PageFormat;
+import java.awt.print.Printable;
+import java.awt.print.PrinterException;
+import java.awt.print.PrinterJob;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import javax.swing.JEditorPane;
+import java.awt.TextField;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
+
 import javax.swing.JTextArea;
+import java.awt.TextArea;
+
+import java.awt.Cursor;
+import javax.swing.JTextPane;
+import javax.swing.RepaintManager;
+
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.ButtonGroup;
+
+
 import java.awt.Cursor;
 import javax.swing.AbstractAction;
 import javax.swing.JTextField;
+
 
 
 public class TextMainWindow extends JFrame  {
@@ -185,7 +216,10 @@ public class TextMainWindow extends JFrame  {
 		JSeparator separator_3 = new JSeparator();
 		editMenu.add(separator_3);
 
+
+
 		// cut selected text and send to system clipboard
+
 		JMenuItem cutMenu = new JMenuItem("Cut");
 		editMenu.add(cutMenu);
 		cutMenu.addActionListener(new ActionListener() {
@@ -194,7 +228,9 @@ public class TextMainWindow extends JFrame  {
 			}
 		});
 
+
 		// copy selected text and send to system clipboard
+
 		JMenuItem copyMenu = new JMenuItem("Copy");
 		editMenu.add(copyMenu);
 		copyMenu.addActionListener(new ActionListener() {
@@ -203,7 +239,9 @@ public class TextMainWindow extends JFrame  {
 			}
 		});
 
+
 		// paste from system clipboard
+
 		JMenuItem pasteMenu = new JMenuItem("Paste");
 		editMenu.add(pasteMenu);
 		pasteMenu.addActionListener(new ActionListener() {
@@ -215,7 +253,9 @@ public class TextMainWindow extends JFrame  {
 		JSeparator separator_4 = new JSeparator();
 		editMenu.add(separator_4);
 		
+
 		// insert date and time at top of text area
+
 		JMenuItem timeDateMenu = new JMenuItem("Time/Date");
 		editMenu.add(timeDateMenu);
 		timeDateMenu.addActionListener(new ActionListener() {
@@ -228,6 +268,7 @@ public class TextMainWindow extends JFrame  {
 		menuBar.add(helpMenu);
 
 		// pop-up message box with information on text pad program created
+
 		JMenuItem aboutMenuItem = new JMenuItem("About Text Pad");
 		helpMenu.add(aboutMenuItem);
 		aboutMenuItem.addActionListener(new ActionListener() {
