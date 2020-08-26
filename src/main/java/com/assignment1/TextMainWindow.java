@@ -127,9 +127,7 @@ public class TextMainWindow extends JFrame  {
 				setTitle(filename);
 					
 				}
-			});
-	
-		
+			});		
 
 		fileMenu.add(openFileMenu);
 		
