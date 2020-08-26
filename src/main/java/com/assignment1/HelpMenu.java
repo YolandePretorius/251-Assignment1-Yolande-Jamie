@@ -3,6 +3,8 @@ package com.assignment1;
 import javax.swing.JOptionPane;
 
 public class HelpMenu {
+	
+	// Actions performed under the help menu
 
 	public static void aboutPopUp() {
 		String about = "ASSIGNMENT 1 TEAM"
