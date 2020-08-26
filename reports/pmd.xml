@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+    version="6.21.0" timestamp="2020-08-27T10:26:29.394">
+<file name="C:\Users\lil_r\Documents\Study\159251\Workspace251\251-Assignment1-Yolande-Jamie\src\main\java\com\assignment1\OpenFileClass.java">
+<violation beginline="35" endline="36" begincolumn="27" endcolumn="17" rule="EmptyCatchBlock" ruleset="Error Prone" package="com.assignment1" class="OpenFileClass" method="openFunction" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#emptycatchblock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+<file name="C:\Users\lil_r\Documents\Study\159251\Workspace251\251-Assignment1-Yolande-Jamie\src\main\java\com\assignment1\PrintClass.java">
+<violation beginline="31" endline="31" begincolumn="14" endcolumn="25" rule="UselessParentheses" ruleset="Code Style" package="com.assignment1" class="PrintClass" method="print" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+Useless parentheses.
+</violation>
+<violation beginline="38" endline="38" begincolumn="14" endcolumn="24" rule="UselessParentheses" ruleset="Code Style" package="com.assignment1" class="PrintClass" method="print" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+Useless parentheses.
+</violation>
+</file>
+<file name="C:\Users\lil_r\Documents\Study\159251\Workspace251\251-Assignment1-Yolande-Jamie\src\main\java\com\assignment1\PrintUtilities.java">
+<violation beginline="31" endline="31" begincolumn="14" endcolumn="25" rule="UselessParentheses" ruleset="Code Style" package="com.assignment1" class="PrintUtilities" method="print" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+Useless parentheses.
+</violation>
+<violation beginline="38" endline="38" begincolumn="14" endcolumn="24" rule="UselessParentheses" ruleset="Code Style" package="com.assignment1" class="PrintUtilities" method="print" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+Useless parentheses.
+</violation>
+</file>
+<file name="C:\Users\lil_r\Documents\Study\159251\Workspace251\251-Assignment1-Yolande-Jamie\src\main\java\com\assignment1\SearchClass.java">
+<violation beginline="50" endline="53" begincolumn="18" endcolumn="9" rule="EmptyCatchBlock" ruleset="Error Prone" package="com.assignment1" class="SearchClass" method="searchTextArea" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#emptycatchblock" priority="3">
+Avoid empty catch blocks
+</violation>
+</file>
+</pmd>
