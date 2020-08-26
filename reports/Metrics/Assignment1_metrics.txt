@@ -1,0 +1,21 @@
+159251 Assignment 1
+Metrics
+
+Per Class:
+1	TextMainWindow:	Lines of Code:	138	Number of methods:  3
+2	SearchClass:	Lines of Code:	21	Number of methods:  3
+3	myHighLighter:	Lines of Code:	4	Number of methods:
+4	PrintClass:	Lines of Code:	30	Number of methods:  3
+5	PrintUtilities:	Lines of Code:	30	Number of methods:  3
+6	SaveAsClass:	Lines of Code:	14	Number of methods:  0
+7	OpenFileClass:	Lines of Code:	14	Number of methods:  0
+8	HelpMenu:	Lines of Code:	10	Number of methods:  0
+9	SaveClass:	Lines of Code:	9	Number of methods:  0
+10	EditMenu:	Lines of Code:	5	Number of methods:  0
+
+
+Code Complexity
+
+
+
+CodeMR report can be found under $project$\codemr\251-Assignment1-Yolande-Jamie\html\main_report\htmlx\lbd\table.html
