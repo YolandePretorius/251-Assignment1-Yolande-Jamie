@@ -1,39 +1,39 @@
-<?xml version="1.0"?>
-
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
-<modelVersion>4.0.0</modelVersion>
-<groupId>org.yolande.jamie</groupId>
-<version>0.0.1-SNAPSHOT</version>
-<artifactId>assignment1</artifactId>
-<properties>
-
-<maven.compiler.source>1.8</maven.compiler.source>
-<maven.compiler.target>1.8</maven.compiler.target>
-
-</properties>
-
-<!-- https://mvnrepository.com/artifact/org.apache.directory.studio/org.apache.commons.io -->
-
-<dependencies>
-			<dependency>
-				<groupId>org.apache.directory.studio</groupId>
-				<artifactId>org.apache.commons.io</artifactId>
-				<version>2.4</version>
-		    </dependency>
-		    
-			<dependency>
-				<groupId>junit</groupId>
-				<!-- NOT org.junit here -->
-				<artifactId>junit-dep</artifactId>
-				<version>4.8.2</version>
-				<scope>test</scope>
-			</dependency>
-</dependencies>
 
 
-<build>
-	<plugins>
-		<plugin>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.yolande.jamie</groupId>
+  <version>0.0.1-SNAPSHOT</version>
+  <artifactId>assignment1</artifactId>
+  <properties>
+
+  <maven.compiler.source>1.8</maven.compiler.source>
+  <maven.compiler.target>1.8</maven.compiler.target>
+
+  </properties>
+
+	<!-- https://mvnrepository.com/artifact/org.apache.directory.studio/org.apache.commons.io -->
+ <dependencies>
+ 		<dependency>
+		    <groupId>org.apache.directory.studio</groupId>
+		    <artifactId>org.apache.commons.io</artifactId>
+		    <version>2.4</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<!-- NOT org.junit here -->
+			<artifactId>junit-dep</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+ </dependencies>
+ 
+ <build> 
+     <pluginManagement>
+		<plugins>
+          <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-pdf-plugin</artifactId>
 			<version>3.8.1</version>
@@ -51,8 +51,39 @@
 				</execution>
 			</executions>
 		</plugin>
-	</plugins>
+			    <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-pmd-plugin</artifactId>
+                  <version>3.13.0</version>
+                  <executions>
+                    <execution>
+                      <id>pmd</id>
+                      <phase>compile</phase>
+                      <goals>
+                         <goal>pmd</goal>
+                      </goals>
+                      <configuration>
+                        <format>xml</format>
+                      </configuration>
+                    </execution>
+                  </executions>
+                </plugin>	
+							
+		</plugins>
+</pluginManagement>
+	</build>
+	
+<reporting>
+    <plugins>
+          <plugin>
+             <groupId>org.apache.maven.plugins</groupId>
+             <artifactId>maven-pmd-plugin</artifactId>
+             <version>3.13.0</version>
 
-</build>
-
-</project>
+          </plugin>
+          
+    </plugins>
+ </reporting>
+ </project>
+	
+	

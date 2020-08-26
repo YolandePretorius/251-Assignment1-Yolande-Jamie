@@ -16,38 +16,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JSeparator;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.print.PageFormat;
-import java.awt.print.Printable;
-import java.awt.print.PrinterException;
-import java.awt.print.PrinterJob;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-
-import javax.swing.JEditorPane;
-import java.awt.TextField;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
-
 import javax.swing.JTextArea;
-import java.awt.TextArea;
-
 import java.awt.Cursor;
-import javax.swing.JTextPane;
-import javax.swing.RepaintManager;
-
-
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.ButtonGroup;
-
-
-import java.awt.Cursor;
-import javax.swing.AbstractAction;
 import javax.swing.JTextField;
 
 
@@ -258,7 +228,7 @@ public class TextMainWindow extends JFrame  {
 		editMenu.add(timeDateMenu);
 		timeDateMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				textArea.insert(EditMenu.TimeAndDate(), 0);
+				textArea.insert(EditMenu.timeAndDate(), 0);
 			}
 		});
 		
@@ -311,18 +281,6 @@ public class TextMainWindow extends JFrame  {
 		
 	
 	}
-
-
-	private class SwingAction extends AbstractAction {
-		public SwingAction() {
-			putValue(NAME, "SwingAction");
-			putValue(SHORT_DESCRIPTION, "Some short description");
-		}
-		public void actionPerformed(ActionEvent e) {
-		}  
-
-	}
-
 
 
 }
